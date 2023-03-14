@@ -1,0 +1,4 @@
+/node_modules
+/.env
+/dj.js
+/package-lock.json
