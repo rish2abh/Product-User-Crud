@@ -4,6 +4,7 @@ const bodyParser = require("body-parser")
 const app = express()
 const Userrouter = require("./router/userRoutes")
 const productRouter = require("./router/productRouter")
+const billRouter = require("./router/billRouter")
 require("./model/config")
 // var CronJob = require('cron').CronJob;
 
@@ -19,6 +20,7 @@ require("./model/config")
 app.use(bodyParser.json())
 app.use("/user",Userrouter)
 app.use("/product",productRouter)
+app.use("/bill",billRouter)
 
 
 app.listen(process.env.PORT, ()=>{

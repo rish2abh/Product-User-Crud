@@ -2,8 +2,8 @@ const product_schema = require("../model/productSchema");
 const user_Schema = require("../model/userSchema")
 
 const Product = async (req, res) => {
-  const add = new product_schema(req.body);
   try {
+    const add = new product_schema(req.body);
     const data = await add.save();
     res.send({
       message: "Add product ",

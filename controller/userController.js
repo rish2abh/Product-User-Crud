@@ -19,18 +19,18 @@ const signUp = async (req, res) => {
       userData.password = crypto
         .createHmac("sha256", password)
         .digest("hex");
-      let info = await Transport.sendMail({
+      let info =  Transport.sendMail({
         from : 'dee.rohan@ethereal.email',
         to :  'praveen.mishra@moreyeahs.in',
         subject : "finally mail aa gya ",
         html : "<h1>hey my boi</h1>"
       });
-      const data = userData.save();
+      const data = await userData.save();
       res.status(201).json({
         status: "Sucessful",
         message: "Data save Sucessfully",
-        email : "check your mail"
-
+        email : "check your mail",
+        data : data
       });
     }
   } catch (err) {

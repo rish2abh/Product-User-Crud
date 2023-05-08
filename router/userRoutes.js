@@ -10,6 +10,7 @@ router.post("/login",Val.userloginVal,controller.login)
 router.delete("/delete/:id",auth,crud.Delete)
 router.patch("/update/:id",auth,crud.Update)
 router.get("/list",crud.list)
+router.get("/pagelist",crud.paginationList)
 
 
 
